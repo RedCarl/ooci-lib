@@ -12,7 +12,6 @@ public interface MNPCs {
     static NPC createNPC(Location location, List<Object> texts, NPC npc) {
 
         npc.data().setPersistent(NPC.Metadata.NAMEPLATE_VISIBLE, false);
-        npc.data().set(NPC.Metadata.NAMEPLATE_VISIBLE, false);
 
         npc.spawn(location);
 
@@ -22,10 +21,10 @@ public interface MNPCs {
         }
 
         if (!texts.isEmpty()) {
-            location.setY(location.getBlockY()+2.3+(texts.size()*0.25));
+            location.setY(location.getBlockY()+2.1+(texts.size()*0.25));
             texts.forEach(i->{
                 if (i instanceof ItemStack){
-                    location.setY(location.getY()+0.35);
+                    location.setY(location.getY()+0.37);
                 }
             });
             MHolograms.createHologram(npc.getName(),location,texts);
