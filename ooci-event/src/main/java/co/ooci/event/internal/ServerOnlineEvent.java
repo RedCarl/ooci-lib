@@ -5,7 +5,7 @@ import co.ooci.event.manager.OociEvent;
 import lombok.Getter;
 
 @Getter
-public  class ServerOnlineEvent extends OociEvent {
+public class ServerOnlineEvent extends OociEvent {
 
     protected OociServerInfo serverInfo;
 
