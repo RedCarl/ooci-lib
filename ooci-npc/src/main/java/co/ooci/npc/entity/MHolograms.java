@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface MHolograms {
 
-    static Hologram createHologram(String name, Location location, List<Object> texts){
+    static void createHologram(String name, Location location, List<Object> texts){
         Hologram hologram = DHAPI.createHologram(name,location);
 
         for (Object o:texts){
@@ -26,14 +26,13 @@ public interface MHolograms {
             }
         }
 
-        return hologram;
     }
 
 
 
-    static Hologram setHologramLines(Hologram hologram, List<Object> texts){
+    static void setHologramLines(Hologram hologram, List<Object> texts){
 
-        HologramPage page = hologram.getPages().getFirst();
+        HologramPage page = hologram.getPages().get(0);
 
         for (int i = 0; i < page.getLines().size(); i++) {
             HologramLine line = page.getLine(i);
@@ -44,7 +43,6 @@ public interface MHolograms {
             }
         }
 
-        return hologram;
     }
 
 }

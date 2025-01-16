@@ -65,7 +65,7 @@ public class CitizensManager implements Listener {
                     }
                 });
             }
-        }.runTaskTimer(plugin, 20,20);
+        }.runTaskTimer(plugin, 20,60);
     }
 
 

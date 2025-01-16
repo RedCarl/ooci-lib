@@ -16,5 +16,6 @@ public class OociServerInfo {
     private String name;
     private String ip;
     private Integer port;
+    private String version;
     private List<UUID> players;
 }
