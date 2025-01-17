@@ -23,8 +23,9 @@ public final class EventExecutorFactoryImpl implements EventExecutor.Factory<Ooc
         }
         final MethodHandle handle = MethodHandles.lookup().unreflect(method).bindTo(object);
         return (listener, event) -> {
-            if (!actualEventType.isInstance(event))
+            if (!actualEventType.isInstance(event)) {
                 return;
+            }
             handle.invoke(event);
         };
     }
